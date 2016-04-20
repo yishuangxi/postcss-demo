@@ -1,0 +1,27 @@
+{
+  "name": "postcss-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yishuangxi/postcss-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yishuangxi/postcss-demo/issues"
+  },
+  "homepage": "https://github.com/yishuangxi/postcss-demo#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.0",
+    "postcss-cssnext": "^2.5.2",
+    "precss": "^1.4.0"
+  }
+}
