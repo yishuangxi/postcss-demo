@@ -1,0 +1,7 @@
+.luxun{
+    width: width('luxun.jpg', 2);
+    height: height('luxun.jpg', 2);
+    background-size: size('luxun.jpg', 2);
+    background-image: resolve("luxun.jpg");
+    background-image: inline("luxun.jpg");
+}
