@@ -1,0 +1,17 @@
+.inline-block{
+    display: inline-block;
+}
+
+.opacity{
+    opacity: 0.8;
+}
+
+.rgba{
+    color: rgba(0, 0, 0, 0.5)
+}
+.foo {
+    background-image: url("../img/luxun.jpg");
+    width: image-width;
+    height:image-height;
+}
+
