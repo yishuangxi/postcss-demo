@@ -3,3 +3,4 @@ dest
 .idea
 
 *.db
+dist
