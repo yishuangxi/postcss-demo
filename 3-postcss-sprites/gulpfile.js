@@ -8,14 +8,15 @@ var sprites = require('postcss-sprites').default;
 
 var postcssModules = [
     sprites({
-        basePath: './src/',
-        stylesheetPath: './src/css',
-        spritePath: './dist/icons'
+        path: '/',
+        basePath: 'src', 
+        stylesheetPath: './',//Defines relative path to output stylesheet
+        spritePath: 'dist/images/sprite', // define relative path to ouput sprite.
     })
 ]
 
-gulp.task('css', function () {
-    return gulp.src('./src/css/*.css')
+gulp.task('sprites', function () {
+    return gulp.src('src/css/*.css')
         .pipe(postcss(postcssModules))
-        .pipe(gulp.dest('./dist/css'))
+        .pipe(gulp.dest('dist/css'))
 });
