@@ -28,6 +28,8 @@
     "postcss-font-magician": "^1.4.0",
     "postcss-media-minmax": "^2.1.2",
     "postcss-sprites": "^3.1.2",
+    "postcss-url": "^5.1.2",
+    "postcss-urlrev": "^1.2.0",
     "precss": "^1.4.0"
   }
 }
