@@ -4,7 +4,9 @@
 
 var gulp = require('gulp')
 var postcss = require('gulp-postcss');
-var sprites = require('postcss-sprites').default;
+var postcssSprites = require('postcss-sprites')
+var sprites = postcssSprites.default;
+var assets = require('postcss-assets')
 
 var postcssModules = [
     sprites({
@@ -12,6 +14,12 @@ var postcssModules = [
         basePath: 'src', 
         stylesheetPath: './',//Defines relative path to output stylesheet
         spritePath: 'dist/images/sprite', // define relative path to ouput sprite.
+        hooks: {
+            onUpdateRule: function (rule, comment, image) {
+                //更新生成后的规则，这里主要是改变了生成后的url访问路径
+                return spritesOnUpdateRule(true, rule, comment, image);
+            }
+        }
     })
 ]
 
@@ -20,3 +28,9 @@ gulp.task('sprites', function () {
         .pipe(postcss(postcssModules))
         .pipe(gulp.dest('dist/css'))
 });
+
+function spritesOnUpdateRule(isDev, rule, comment, image){
+    image.spriteUrl = "/public/"+image.spriteUrl
+    postcssSprites.updateRule(rule, comment, image);
+}
+
