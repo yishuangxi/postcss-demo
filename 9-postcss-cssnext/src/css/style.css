@@ -1,0 +1,56 @@
+p:not(:first-child, .special) {
+  color: red;
+}
+
+a::before {
+  /* ... */
+}
+
+body {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --fontSize: 1rem;
+}
+
+h1 {
+  font-size: calc(var(--fontSize) * 2);
+}
+
+@custom-selector :--button button, .button;
+@custom-selector :--enter :hover, :focus;
+
+:--button {
+  /* styles for your buttons */
+}
+:--button:--enter {
+  /*
+    hover/focus styles for your button
+
+    Read more about :enter proposal
+    http://discourse.specifiction.org/t/a-common-pseudo-class-for-hover-and-focus/877
+   */
+}
+
+a {
+  /* direct nesting (& MUST be the first part of selector)*/
+  & span {
+    color: white;
+  }
+
+  /* @nest rule (for complex nesting) */
+  @nest span & {
+    color: blue;
+  }
+
+  /* media query automatic nesting */
+  @media (min-width: 30em) {
+    color: yellow;
+  }
+}
+
+
+nav :any-link {
+  background-color: yellow;
+}
