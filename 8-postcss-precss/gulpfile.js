@@ -7,7 +7,7 @@ var precss = require('precss')
 
 gulp.task('precss', function(){
     var processors = [ precss()]
-    return gulp.src('src/css/*.scss')
+    return gulp.src('src/css/*.css')
         .pipe(postcss(processors))
         .pipe(gulp.dest('dest/css'))
 })
