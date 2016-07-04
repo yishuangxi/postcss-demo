@@ -1,0 +1,39 @@
+@import "_var.scss";
+
+.red{
+  color: $red
+}
+
+.menu {
+    width: 100%;
+    a {
+        text-decoration: none;
+    }
+    &::before {
+        content: '';
+    }
+}
+
+$column_layout: 2;
+
+.column {
+    @if $column_layout == 2 {
+        width: 50%;
+        float: left;
+    }   @else {
+        width: 100%;
+    }
+}
+
+@define-mixin icon $network, $color {
+
+    .button.$(network) {
+
+           background-image: url('img/$(network).png');
+
+         background-color: $color;
+
+    }
+}
+
+@mixin icon twitter, red{}
