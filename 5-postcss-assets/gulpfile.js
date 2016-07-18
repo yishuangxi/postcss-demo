@@ -7,8 +7,8 @@ var assets = require('postcss-assets')
 
 gulp.task('assets', function(){
     var processors = [ assets({
-        basePath: 'src/images',
-        baseUrl: 'http://static.example.com',
+        basePath: './',
+        baseUrl: '/',
         cachebuster: true
     }) ]
     return gulp.src('src/css/*.css')
