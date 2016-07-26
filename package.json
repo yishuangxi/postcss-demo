@@ -21,8 +21,10 @@
     "autoprefixer": "^6.3.6",
     "cssgrace": "^3.0.0",
     "cssnano": "^3.7.1",
+    "graceful-fs": "^4.1.4",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.1.0",
+    "gulp-posthtml": "^1.5.2",
     "gulp-sass": "^2.3.2",
     "postcss-assets": "^4.1.0",
     "postcss-cssnext": "^2.7.0",
@@ -35,6 +37,7 @@
     "postcss-urlrev": "^1.2.0",
     "posthtml": "^0.9.0",
     "posthtml-css-modules": "^0.1.0",
+    "posthtml-custom-elements": "^1.0.3",
     "precss": "^1.4.0"
   }
 }
