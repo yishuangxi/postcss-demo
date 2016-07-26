@@ -33,6 +33,8 @@
     "postcss-sprites": "^3.1.2",
     "postcss-url": "^5.1.2",
     "postcss-urlrev": "^1.2.0",
+    "posthtml": "^0.9.0",
+    "posthtml-css-modules": "^0.1.0",
     "precss": "^1.4.0"
   }
 }
