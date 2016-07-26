@@ -28,6 +28,7 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-font-magician": "^1.4.0",
     "postcss-media-minmax": "^2.1.2",
+    "postcss-modules": "^0.5.0",
     "postcss-scss": "^0.1.8",
     "postcss-sprites": "^3.1.2",
     "postcss-url": "^5.1.2",
