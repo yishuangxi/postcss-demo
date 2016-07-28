@@ -14,6 +14,7 @@ var modules = require('postcss-modules')
 var posthtml = require('gulp-posthtml');
 var posthtmlCssModules = require('posthtml-css-modules')
 var dist = __dirname + '/dest'
+var concat =require('gulp-concat')
 
 gulp.task('modules', function () {
     var processors = [modules({
@@ -26,13 +27,14 @@ gulp.task('modules', function () {
     })]
     return gulp.src('src/css/*.css')
         .pipe(postcss(processors))
+        .pipe(concat('public.css'))
         .pipe(gulp.dest('dest/css'))
 })
 
 gulp.task('html', ['modules'], function() {
     var posthtml = require('gulp-posthtml');
     return gulp.src('src/**/*.html')
-        .pipe(posthtml([ require('posthtml-css-modules')('./deststyle.json') ]/*, options */))
+        .pipe(posthtml([ require('posthtml-css-modules')('./deststyle.json') ]))
         .pipe(gulp.dest('dest/'));
 });
 
