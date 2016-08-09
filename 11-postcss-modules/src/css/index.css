@@ -1,5 +1,11 @@
+@value utils: 'common/utils.css';
+@value color: 'common/color.css';
 .index{
-    composes: fl from 'common/utils.css';
-    composes: red from 'common/color.css';
+    composes: fl from utils;
+    composes: color-red from color;
     font-size: 14px;
+}
+
+.les{
+    color:red;
 }

@@ -34,8 +34,8 @@ gulp.task('modules', function () {
 })
 
 gulp.task('clean', function(){
-    gulp.src(['dest/css', 'dest/js', 'dest/html', 'dest/json/*.json'])
-        .pipe(gulp_clean())
+    return gulp.src(['dest/css', 'dest/js', 'dest/html', 'dest/json/*.json'] , {read: false})
+        .pipe(gulp_clean({force: true}))
 })
 
 gulp.task('html', ['modules'], function() {
@@ -45,12 +45,13 @@ gulp.task('html', ['modules'], function() {
 
     for (var i = 0; i < htmlList.length; i++) {
         var filename = htmlList[i]
-        console.log(filename)
         gulp.src('src/html/' + filename)
             .pipe(posthtml([require('posthtml-css-modules')('./dest/json/' + filename.split('.')[0] + '.json')]))
             .pipe(gulp.dest('dest/html'));
     }
 });
+
+gulp.task('default', ['html'])
 
 // gulp.task('posthtml', ['modules'], function() {
 //  return gulp.src('html/index.html')

@@ -1,5 +1,8 @@
+@value color: 'common/color.css';
 .about{
-    composes: red from 'common/color.css';
+    composes: color-red from color;
     border: 12px solid red;
+    color: blue;
+    background-color: red;
 }
 
