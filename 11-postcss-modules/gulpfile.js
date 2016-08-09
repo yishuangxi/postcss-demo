@@ -23,7 +23,7 @@ gulp.task('modules', function () {
         getJSON: function (cssFileName, json) {
             var cssName = path.basename(cssFileName, '.css');
 
-            var jsonFileName = path.resolve('./dest/json', cssName + '.json');
+            var jsonFileName = path.resolve('./dest/json/', cssName + '.json');
             fs.writeFileSync(jsonFileName, JSON.stringify(json));
         }
     })]
