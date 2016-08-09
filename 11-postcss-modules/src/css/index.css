@@ -1,0 +1,5 @@
+.index{
+    composes: fl from 'common/utils.css';
+    composes: red from 'common/color.css';
+    font-size: 14px;
+}

@@ -1,0 +1,5 @@
+.about{
+    composes: red from 'common/color.css';
+    border: 12px solid red;
+}
+
