@@ -23,6 +23,7 @@
     "cssnano": "^3.7.1",
     "graceful-fs": "^4.1.4",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-postcss": "^6.1.0",
     "gulp-posthtml": "^1.5.2",

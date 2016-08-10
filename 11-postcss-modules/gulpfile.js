@@ -7,14 +7,10 @@ var path = require('path')
 var fs = require('fs')
 
 var gulp = require('gulp')
-var sass = require('gulp-sass')
 var postcss = require('gulp-postcss')
 var modules = require('postcss-modules')
-// var posthtml = require('posthtml')
-var posthtml = require('gulp-posthtml');
-var posthtmlCssModules = require('posthtml-css-modules')
-var dist = __dirname + '/dest'
-var concat =require('gulp-concat')
+var gulp_posthtml = require('gulp-posthtml');
+var posthtml_css_modules = require('posthtml-css-modules')
 var gulp_clean = require('gulp-clean')
 
 gulp.task('modules', function () {
@@ -29,7 +25,6 @@ gulp.task('modules', function () {
     })]
     return gulp.src('src/css/*.css')
         .pipe(postcss(processors))
-        // .pipe(concat('public.css'))
         .pipe(gulp.dest('dest/css'))
 })
 
@@ -39,23 +34,14 @@ gulp.task('clean', function(){
 })
 
 gulp.task('html', ['modules'], function() {
-    var posthtml = require('gulp-posthtml');
-
     var htmlList = fs.readdirSync('src/html')
-
     for (var i = 0; i < htmlList.length; i++) {
         var filename = htmlList[i]
         gulp.src('src/html/' + filename)
-            .pipe(posthtml([require('posthtml-css-modules')('./dest/json/' + filename.split('.')[0] + '.json')]))
+            .pipe(gulp_posthtml([posthtml_css_modules('./dest/json/' + filename.split('.')[0] + '.json')]))
             .pipe(gulp.dest('dest/html'));
     }
 });
 
 gulp.task('default', ['html'])
-
-// gulp.task('posthtml', ['modules'], function() {
-//  return gulp.src('html/index.html')
-//    .pipe(posthtml([ posthtmlCssModules('./deststyle.json') ]))
-//    .pipe(gulp.dest('dest'));
-// });
 
